@@ -51,8 +51,8 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Id",
-									"type": "String"
+									"type": "String",
+									"ordinal": 1
 								},
 								"sink": {
 									"name": "ID",
@@ -61,8 +61,8 @@
 							},
 							{
 								"source": {
-									"name": "State",
-									"type": "String"
+									"type": "String",
+									"ordinal": 2
 								},
 								"sink": {
 									"name": "STATE",
@@ -71,8 +71,8 @@
 							},
 							{
 								"source": {
-									"name": "CreatedDateUtc",
-									"type": "String"
+									"type": "String",
+									"ordinal": 3
 								},
 								"sink": {
 									"name": "CREATEDDATEUTC",
@@ -81,8 +81,8 @@
 							},
 							{
 								"source": {
-									"name": "CancellationRequestDateUtc",
-									"type": "String"
+									"type": "String",
+									"ordinal": 4
 								},
 								"sink": {
 									"name": "CANCELLATIONREQUESTDATEUTC",
@@ -91,8 +91,8 @@
 							},
 							{
 								"source": {
-									"name": "CancellationDateUtc",
-									"type": "String"
+									"type": "String",
+									"ordinal": 5
 								},
 								"sink": {
 									"name": "CANCELLATIONDATEUTC",
@@ -101,8 +101,8 @@
 							},
 							{
 								"source": {
-									"name": "CancellationRejectionDateUtc",
-									"type": "String"
+									"type": "String",
+									"ordinal": 6
 								},
 								"sink": {
 									"name": "CANCELLATIONREJECTIONDATEUTC",
@@ -111,8 +111,8 @@
 							},
 							{
 								"source": {
-									"name": "UndoCancellationDateUtc",
-									"type": "String"
+									"type": "String",
+									"ordinal": 7
 								},
 								"sink": {
 									"name": "UNDOCANCELLATIONDATEUTC",
@@ -121,8 +121,8 @@
 							},
 							{
 								"source": {
-									"name": "CancelledEmployee",
-									"type": "String"
+									"type": "String",
+									"ordinal": 8
 								},
 								"sink": {
 									"name": "CANCELLEDEMPLOYEE",
@@ -131,8 +131,8 @@
 							},
 							{
 								"source": {
-									"name": "SoldEmployee",
-									"type": "String"
+									"type": "String",
+									"ordinal": 9
 								},
 								"sink": {
 									"name": "SOLDEMPLOYEE",
@@ -141,8 +141,8 @@
 							},
 							{
 								"source": {
-									"name": "UpdatedDateUtc",
-									"type": "String"
+									"type": "String",
+									"ordinal": 10
 								},
 								"sink": {
 									"name": "UPDATEDDATEUTC",
@@ -154,7 +154,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "BlobData",
 						"type": "DatasetReference"
 					}
 				],
@@ -200,9 +200,8 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Id",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 1
 								},
 								"sink": {
 									"name": "Id",
@@ -212,9 +211,8 @@
 							},
 							{
 								"source": {
-									"name": "State",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 2
 								},
 								"sink": {
 									"name": "State",
@@ -224,9 +222,8 @@
 							},
 							{
 								"source": {
-									"name": "CreatedDateUtc",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 3
 								},
 								"sink": {
 									"name": "CreatedDateUtc",
@@ -236,9 +233,8 @@
 							},
 							{
 								"source": {
-									"name": "CancellationRequestDateUtc",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 4
 								},
 								"sink": {
 									"name": "CancellationRequestDateUtc",
@@ -248,9 +244,8 @@
 							},
 							{
 								"source": {
-									"name": "CancellationDateUtc",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 5
 								},
 								"sink": {
 									"name": "CancellationDateUtc",
@@ -260,9 +255,8 @@
 							},
 							{
 								"source": {
-									"name": "CancellationRejectionDateUtc",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 6
 								},
 								"sink": {
 									"name": "CancellationRejectionDateUtc",
@@ -272,9 +266,8 @@
 							},
 							{
 								"source": {
-									"name": "UndoCancellationDateUtc",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 7
 								},
 								"sink": {
 									"name": "UndoCancellationDateUtc",
@@ -284,9 +277,8 @@
 							},
 							{
 								"source": {
-									"name": "CancelledEmployee",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 8
 								},
 								"sink": {
 									"name": "CancelledEmployee",
@@ -296,9 +288,8 @@
 							},
 							{
 								"source": {
-									"name": "SoldEmployee",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 9
 								},
 								"sink": {
 									"name": "SoldEmployee",
@@ -308,9 +299,8 @@
 							},
 							{
 								"source": {
-									"name": "UpdatedDateUtc",
 									"type": "String",
-									"physicalType": "String"
+									"ordinal": 10
 								},
 								"sink": {
 									"name": "UpdatedDateUtc",
@@ -328,7 +318,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "BlobData",
 						"type": "DatasetReference"
 					}
 				],
