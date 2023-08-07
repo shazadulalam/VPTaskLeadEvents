@@ -1,0 +1,70 @@
+{
+	"name": "Newdb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DBLinkService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "State",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CreatedDateUtc",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CancellationRequestDateUtc",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CancellationDateUtc",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CancellationRejectionDateUtc",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UndoCancellationDateUtc",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CancelledEmployee",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SoldEmployee",
+				"type": "nvarchar"
+			},
+			{
+				"name": "UpdatedDateUtc",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CompanyLeads2"
+		}
+	}
+}
