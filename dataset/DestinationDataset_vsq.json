@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_vsq",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DBLinkService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CompanyLeads1"
+		}
+	}
+}
