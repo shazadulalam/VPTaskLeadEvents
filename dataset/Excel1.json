@@ -1,0 +1,20 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vaptaskblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "TaskDummyData.xlsx",
+				"container": "vptask"
+			},
+			"sheetIndex": 1
+		},
+		"schema": []
+	}
+}
