@@ -1,0 +1,23 @@
+{
+	"name": "BlobData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vaptaskblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "TaskDummyData.csv",
+				"container": "vptask"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
