@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "vptaskadf"
 		},
+		"BlbSinkIncre_connectionString": {
+			"value": ""
+		},
 		"DBLinkService_connectionString": {
 			"value": ""
 		},

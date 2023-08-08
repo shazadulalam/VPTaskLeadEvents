@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "vptaskadf"
 		},
+		"BlbSinkIncre_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlbSinkIncre'"
+		},
 		"DBLinkService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'DBLinkService'"
@@ -45,6 +49,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"BlbSinkIncre_connectionString": {
+						"value": "[parameters('BlbSinkIncre_connectionString')]"
 					},
 					"DBLinkService_connectionString": {
 						"value": "[parameters('DBLinkService_connectionString')]"
