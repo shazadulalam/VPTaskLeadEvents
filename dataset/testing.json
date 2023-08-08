@@ -1,0 +1,64 @@
+{
+	"name": "testing",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DBLinkService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "State",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CreatedDateUtc",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "CancellationRequestDateUtc",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "CancellationDateUtc",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "CancellationRejetionDateUtc",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "UndoCancellationDateUtc",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "CancelledEmployee",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SoldEmployee",
+				"type": "nvarchar"
+			},
+			{
+				"name": "UpdatedDateUtc",
+				"type": "datetime2",
+				"scale": 7
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CompanyLeads2"
+		}
+	}
+}
