@@ -1,0 +1,54 @@
+{
+	"name": "VPTaskFlow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "BlobData",
+						"type": "DatasetReference"
+					},
+					"name": "Blob"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DataFlowDb",
+						"type": "DatasetReference"
+					},
+					"name": "DB"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Blob",
+				"Blob sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Id as string,",
+				"          State as string,",
+				"          CreatedDateUtc as string,",
+				"          CancellationRequestDateUtc as string,",
+				"          CancellationDateUtc as string,",
+				"          CancellationRejectionDateUtc as string,",
+				"          UndoCancellationDateUtc as string,",
+				"          CancelledEmployee as string,",
+				"          SoldEmployee as string,",
+				"          UpdatedDateUtc as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> DB"
+			]
+		}
+	}
+}
