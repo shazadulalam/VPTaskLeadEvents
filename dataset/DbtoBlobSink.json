@@ -1,0 +1,63 @@
+{
+	"name": "DbtoBlobSink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlbSinkIncre",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "vptask"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "C817066B-AA29-CD75-D786-08DB92790896",
+				"type": "String"
+			},
+			{
+				"name": "0",
+				"type": "String"
+			},
+			{
+				"name": "8/1/2023 10:212",
+				"type": "String"
+			},
+			{
+				"name": "NULL3",
+				"type": "String"
+			},
+			{
+				"name": "NULL4",
+				"type": "String"
+			},
+			{
+				"name": "NULL5",
+				"type": "String"
+			},
+			{
+				"name": "NULL6",
+				"type": "String"
+			},
+			{
+				"name": "NULL7",
+				"type": "String"
+			},
+			{
+				"name": "abcd@pflegehilfe.de",
+				"type": "String"
+			},
+			{
+				"name": "8/1/2023 10:219",
+				"type": "String"
+			}
+		]
+	}
+}

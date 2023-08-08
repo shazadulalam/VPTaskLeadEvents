@@ -6,29 +6,24 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "BlobData",
+						"referenceName": "DBtoBlobSource",
 						"type": "DatasetReference"
 					},
-					"name": "Blob"
+					"name": "Database"
 				}
 			],
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DataFlowDb",
+						"referenceName": "DbtoBlobSink",
 						"type": "DatasetReference"
 					},
-					"name": "DB"
+					"name": "Blob"
 				}
 			],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> Blob",
-				"Blob sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     input(",
+				"source(output(",
 				"          Id as string,",
 				"          State as string,",
 				"          CreatedDateUtc as string,",
@@ -40,14 +35,30 @@
 				"          SoldEmployee as string,",
 				"          UpdatedDateUtc as string",
 				"     ),",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     enableCdc: true,",
+				"     mode: 'read',",
+				"     skipInitialLoad: false,",
+				"     waterMarkColumn: 'UpdatedDateUtc',",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> Database",
+				"Database sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          {C817066B-AA29-CD75-D786-08DB92790896} as string,",
+				"          {0} as string,",
+				"          {8/1/2023 10:212} as string,",
+				"          NULL3 as string,",
+				"          NULL4 as string,",
+				"          NULL5 as string,",
+				"          NULL6 as string,",
+				"          NULL7 as string,",
+				"          {abcd@pflegehilfe.de} as string,",
+				"          {8/1/2023 10:219} as string",
+				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> DB"
+				"     skipDuplicateMapOutputs: true) ~> Blob"
 			]
 		}
 	}

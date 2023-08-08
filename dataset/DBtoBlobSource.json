@@ -1,0 +1,57 @@
+{
+	"name": "DBtoBlobSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DBLinkService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "varchar"
+			},
+			{
+				"name": "State",
+				"type": "varchar"
+			},
+			{
+				"name": "CreatedDateUtc",
+				"type": "varchar"
+			},
+			{
+				"name": "CancellationRequestDateUtc",
+				"type": "varchar"
+			},
+			{
+				"name": "CancellationDateUtc",
+				"type": "varchar"
+			},
+			{
+				"name": "CancellationRejectionDateUtc",
+				"type": "varchar"
+			},
+			{
+				"name": "UndoCancellationDateUtc",
+				"type": "varchar"
+			},
+			{
+				"name": "CancelledEmployee",
+				"type": "varchar"
+			},
+			{
+				"name": "SoldEmployee",
+				"type": "varchar"
+			},
+			{
+				"name": "UpdatedDateUtc",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CompanyLeads"
+		}
+	}
+}
