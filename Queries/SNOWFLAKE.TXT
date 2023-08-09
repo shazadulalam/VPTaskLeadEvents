@@ -1,0 +1,56 @@
+-- Create a warehouse
+CREATE WAREHOUSE IF NOT EXISTS CompanyLeadsWarehouse 
+  WAREHOUSE_SIZE = 'XSMALL' 
+  AUTO_SUSPEND = 600 
+  AUTO_RESUME = TRUE;
+
+-- Create a database
+CREATE TABLE CompanyLeads;
+
+DROP DATABASE COMPANYLEADSDB
+DROP TABLE COMPANYLEADS
+
+-- Create a table in the new database
+CREATE TABLE CompanyLeadsDB.PUBLIC.CompanyLeads1 (
+    Id UUID_STRING(50),
+    State VARCHAR(10),
+    CreatedDateUtc VARCHAR(20),
+    CancellationRequestDateUtc VARCHAR(20),
+    CancellationDateUtc VARCHAR(20),
+    CancellationRejectionDateUtc VARCHAR(20),
+    UndoCancellationDateUtc VARCHAR(20),
+    CancelledEmployee VARCHAR(30),
+    SoldEmployee VARCHAR(30),
+    UpdatedDateUtc VARCHAR(20)
+);
+
+--Storage integration for copying data from azure 
+CREATE STORAGE INTEGRATION azure_blob_integration 
+TYPE = EXTERNAL_STAGE 
+STORAGE_PROVIDER = AZURE 
+ENABLED = TRUE 
+AZURE_TENANT_ID = '1209d729-cce8-46bf-ba51-1ede13091df0'
+STORAGE_ALLOWED_LOCATIONS = ('azure://detaskstorage.blob.core.windows.net/vptask/data/')
+STORAGE_BLOCKED_LOCATIONS = ('azure://detaskstorage.blob.core.windows.net/vptask/sensitivedata/');
+
+
+-- To see storage integration description
+DESC STORAGE INTEGRATION azure_blob_integration;
+
+-- User role access grant
+GRANT USAGE ON INTEGRATION azure_blob_integration TO ROLE ACCOUNTADMIN;
+
+-- Create a stage to staging the data first
+CREATE STAGE my_stage
+URL = 'azure://detaskstorage.blob.core.windows.net/vptask/data/'
+STORAGE_INTEGRATION = azure_blob_integration;
+
+-- Create a transformed table to hold the transformed data
+CREATE TABLE CompanyLeadsDB.PUBLIC.LeadEvents (
+    Id STRING NOT NULL PRIMARY KEY,  -- Using STRING for UUIDs
+    EventType STRING,
+    EventEmployee STRING,
+    EventDate DATETIME,
+    LeadId STRING,  -- Using STRING for UUIDs
+    UpdatedDateUtc DATETIME
+);
