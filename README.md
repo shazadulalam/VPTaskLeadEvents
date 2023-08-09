@@ -37,7 +37,7 @@ Complete A to Z documentation about how to build the pipeline and how to deploy 
 
 1. **Clone the Repository:**
    ```bash
-   git clone [repository-url]
+   git clone git@github.com:shazadulalam/VPTaskLeadEvents.git
    cd [repository-directory]
 ```
    
