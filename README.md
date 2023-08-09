@@ -67,13 +67,15 @@ Complete A to Z documentation about how to build the pipeline and how to deploy 
 ### Usage
 
 1. Update the `config/settings.py` with the appropriate Snowflake credentials and configurations.
-   ```bash
-    SNOWFLAKE_ACCOUNT = 'YourAccountID: e.g, {nm123456}.{us-east}.azure'
-    SNOWFLAKE_USER = 'YourSnowflakeUserName'
-    SNOWFLAKE_PASSWORD = 'YourPassword'
-    SNOWFLAKE_DATABASE = 'NameOfYourDB'
-    SNOWFLAKE_SCHEMA = 'YourSchemaName'
-    SNOWFLAKE_WAREHOUSE = 'YourWarehouseName'
+
+```bash
+SNOWFLAKE_ACCOUNT = 'YourAccountID: e.g, {nm123456}.{us-east}.azure'
+SNOWFLAKE_USER = 'YourSnowflakeUserName'
+SNOWFLAKE_PASSWORD = 'YourPassword'
+SNOWFLAKE_DATABASE = 'NameOfYourDB'
+SNOWFLAKE_SCHEMA = 'YourSchemaName'
+SNOWFLAKE_WAREHOUSE = 'YourWarehouseName'
+
 
 
 3. Run the main Python script to initiate the data transformation process:
