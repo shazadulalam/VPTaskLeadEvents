@@ -36,18 +36,21 @@ Complete A to Z documentation about how to build the pipeline and how to deploy 
 ### Installation & Setup
 
 1. **Clone the Repository:**
+
    ```bash
    git clone git@github.com:shazadulalam/VPTaskLeadEvents.git
    cd [repository-directory]
-```
+    ```
    
 2. **Set up a Virtual Environment (Recommended):**
+
    ```bash
    python -m venv venv
    source venv/bin/activate   # On Windows use: venv\Scripts\activate
    ```
 
 3. **Install Dependencies:**
+
    ```bash
    pip install -r requirements.txt
 
