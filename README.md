@@ -39,18 +39,22 @@ Complete A to Z documentation about how to build the pipeline and how to deploy 
    ```bash
    git clone [repository-url]
    cd [repository-directory]
+```
    
 2. **Set up a Virtual Environment (Recommended):**
    ```bash
    python -m venv venv
    source venv/bin/activate   # On Windows use: venv\Scripts\activate
-   
+   ```
+
 3. **Install Dependencies:**
    ```bash
    pip install -r requirements.txt
 
+    ```
 ### Python Project Structure
-    ´´
+    
+```bash
     BIT/
     |-- requirements.txt
     |-- config/
@@ -61,7 +65,7 @@ Complete A to Z documentation about how to build the pipeline and how to deploy 
     |   `-- data_transform.py
     `-- main.py
 
-
+```
 
 
 ### Usage
@@ -75,14 +79,14 @@ SNOWFLAKE_PASSWORD = 'YourPassword'
 SNOWFLAKE_DATABASE = 'NameOfYourDB'
 SNOWFLAKE_SCHEMA = 'YourSchemaName'
 SNOWFLAKE_WAREHOUSE = 'YourWarehouseName'
-
+```
 
 
 3. Run the main Python script to initiate the data transformation process:
 
 ```bash
    python main.py
-
+```
 
 
 
